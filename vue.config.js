@@ -22,10 +22,6 @@ module.exports = {
           pathRewrite: {
             '^/api': ''
           }
-        },
-        '/v1':{
-          target:'https://api.huobi.pro',
-          changeOrigin:true
         }
       }
     }
