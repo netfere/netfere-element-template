@@ -16,6 +16,7 @@
             1、在src/views/login.vue中编辑登陆界面及账户验证；<br>
             2、在src/views/index.vue配置站点名称、界面右上角的姓名和头像，以及鼠标滑过头像处的菜单及响应；<br>
             3、在router.js中配置路由信息，配置的路由将会显示为本界面左侧的导航菜单；<br>
+            4、另外main.js和src/plugins/netfere.js文件很重要，请打开来看一下，可以根据自己的需要修改<br>
             <span style="color:red;">上述配置说明均在相应的文件中</span>
         </div>
         <h2>关于NetfereElementTemplate</h2>

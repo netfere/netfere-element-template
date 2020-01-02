@@ -23,12 +23,12 @@ export const adminRoutes = [
 			{
 				path: 'home', meta: { title: '首页' },
 				component: () => import('admin/home'),
-			}, 
+			},
 			/** Blank 示例 */
 			{
 				path: 'blank', meta: { title: '一个空白页' },
 				component: Blank
-			}, 
+			},
 			/** BlankRouter 示例 */
 			{
 				path: 'blankrouter', meta: { title: '空白路由' },
@@ -78,10 +78,11 @@ export default new Router({
 			/** 通过name判断当前子系统 */
 			if (['admin'].indexOf(name) > -1) {
 				/** 从sessionStorage中读取permission值，此值是在login.vue中login方法写入的 */
-				const { type, roles = [], expires = 0 } = JSON.parse(sessionStorage.getItem('permission') || "{}");
+				const { type, roles = [], expires = 0, token = "" } = JSON.parse(sessionStorage.getItem('permission') || "{}");
 				/** 如果未过期 */
 				if (expires > new Date().getTime()) {
 					if (type === 'admin') {
+						window.token = token;
 						/** 动态加载子系统路由及权限 */
 						instance.loadRoutes(adminRoutes, roles);
 					} else {
